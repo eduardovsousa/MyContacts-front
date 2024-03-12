@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import {
   Card,
   Container, Header,
@@ -18,7 +20,7 @@ export default function Home() {
 
       <Header>
         <strong>3 Contatos</strong>
-        <a href="/">Novo contato</a>
+        <Link to="/new">Novo contato</Link>
       </Header>
 
       <ListContainer>
@@ -40,47 +42,9 @@ export default function Home() {
           </div>
 
           <div className="actions">
-            <a href="/">
+            <Link to="/edit/123">
               <img src={edit} alt="Edit icon" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Trash icon" />
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Eduardo Varela</strong>
-              <small>instagram</small>
-            </div>
-            <span>eduardo@mail.com</span>
-            <span>(11) 99999-9999</span>
-          </div>
-
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit icon" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Trash icon" />
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Eduardo Varela</strong>
-              <small>instagram</small>
-            </div>
-            <span>eduardo@mail.com</span>
-            <span>(11) 99999-9999</span>
-          </div>
-
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit icon" />
-            </a>
+            </Link>
             <button type="button">
               <img src={trash} alt="Trash icon" />
             </button>
