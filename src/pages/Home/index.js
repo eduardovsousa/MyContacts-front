@@ -13,11 +13,13 @@ import {
   ErrorContainer, Header,
   InputSearchContainer,
   ListHeader,
+  SearchNotFoundContainer,
 } from './styles';
 
 import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import emptyBox from '../../assets/images/icons/empty-box.svg';
+import magnifierQuestion from '../../assets/images/icons/magnifier-question.svg';
 import trash from '../../assets/images/icons/trash.svg';
 import sad from '../../assets/images/sad.svg';
 
@@ -41,8 +43,7 @@ export default function Home() {
     try {
       setIsLoading(true);
 
-      // const contactsList = await ContactsService.listContacts(orderBy);
-      const contactsList = []; await ContactsService.listContacts(orderBy);
+      const contactsList = await ContactsService.listContacts(orderBy);
 
       setHasError(false);
       setContacts(contactsList);
@@ -130,6 +131,16 @@ export default function Home() {
                 à cima para cadastrar o seu primeiro!
               </p>
             </EmptyListContainer>
+          )}
+
+          {(contacts.length > 0 && filteredContacts.length < 1) && (
+            <SearchNotFoundContainer>
+              <img src={magnifierQuestion} alt="Magnifier question" />
+
+              <span>
+                Nenhum resultado foi encontrado para <strong>&quot;{searchTerm}&quot;</strong>
+              </span>
+            </SearchNotFoundContainer>
           )}
 
           {
