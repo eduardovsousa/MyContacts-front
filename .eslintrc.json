@@ -32,6 +32,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "class-methods-use-this": "off",
     "react/jsx-no-bind": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-empty": ["error", { "allowEmptyCatch": true }]
   }
 }
