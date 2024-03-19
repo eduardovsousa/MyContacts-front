@@ -25,6 +25,7 @@ import sad from '../../assets/images/sad.svg';
 
 import Button from '../../components/Button';
 import Loader from '../../components/Loader';
+import Modal from '../../components/Modal';
 
 import ContactsService from '../../services/ContactsService';
 
@@ -75,6 +76,17 @@ export default function Home() {
   return (
     <Container>
       <Loader isLoading={isLoading} />
+
+      <Modal
+        danger
+        title="Tem certeza que desja remover o contato 'Eduardo Varela'?
+        "
+        confirmLabel="Deletar"
+        onCancel={() => alert('Cancelou')}
+        onConfirm={() => alert('Confirmou')}
+      >
+        <h1>dasdasdsad</h1>
+      </Modal>
 
       {contacts.length > 0 && (
         <InputSearchContainer>
