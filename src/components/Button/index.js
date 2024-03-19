@@ -20,11 +20,11 @@ export default function Button({
 }
 
 Button.propTypes = {
+  danger: PropTypes.bool,
   type: PropTypes.string,
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
   children: PropTypes.node.isRequired,
-  danger: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
