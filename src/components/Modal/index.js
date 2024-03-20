@@ -21,7 +21,7 @@ export default function Modal({
   return (
     <ReactPortal containerId="modal-root">
       <Overlay>
-        <Container danger={danger}>
+        <Container $danger={danger}>
           <h1>{title}</h1>
           <div className="modal-body">
             {children}
@@ -37,7 +37,7 @@ export default function Modal({
             </button>
             <Button
               type="button"
-              danger={danger}
+              $danger={danger}
               onClick={onConfirm}
               isLoading={isLoading}
             >
