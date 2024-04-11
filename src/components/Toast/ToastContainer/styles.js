@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Conatiner = styled.div`
+export const Container = styled.div`
   position: fixed;
   z-index: 2;
   bottom: 48px;

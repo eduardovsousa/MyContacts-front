@@ -13,9 +13,9 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
-        <ToastContainer />
 
         <Container>
+          <ToastContainer />
           <Header />
           <Routes />
         </Container>
