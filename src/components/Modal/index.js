@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import useAnimatedUnmount from '../../hooks/useAnimatedUnmount';
 import Button from '../Button';
+import ReactPortal from '../ReactPortal';
 import { Container, Footer, Overlay } from './styles';
 
 export default function Modal({
@@ -21,32 +22,34 @@ export default function Modal({
   }
 
   return (
-    <Overlay $isLeaving={!visible} ref={animatedElementRef}>
-      <Container $danger={danger} $isLeaving={!visible}>
-        <h1>{title}</h1>
-        <div className="modal-body">
-          {children}
-        </div>
-        <Footer>
-          <button
-            type="button"
-            onClick={onCancel}
-            className="cancel-button"
-            disabled={isLoading}
-          >
-            {cancelLabel}
-          </button>
-          <Button
-            type="button"
-            $danger={danger}
-            onClick={onConfirm}
-            isLoading={isLoading}
-          >
-            {confirmLabel}
-          </Button>
-        </Footer>
-      </Container>
-    </Overlay>
+    <ReactPortal containerId="modal-root">
+      <Overlay $isLeaving={!visible} ref={animatedElementRef}>
+        <Container $danger={danger} $isLeaving={!visible}>
+          <h1>{title}</h1>
+          <div className="modal-body">
+            {children}
+          </div>
+          <Footer>
+            <button
+              type="button"
+              onClick={onCancel}
+              className="cancel-button"
+              disabled={isLoading}
+            >
+              {cancelLabel}
+            </button>
+            <Button
+              type="button"
+              $danger={danger}
+              onClick={onConfirm}
+              isLoading={isLoading}
+            >
+              {confirmLabel}
+            </Button>
+          </Footer>
+        </Container>
+      </Overlay>
+    </ReactPortal>
   );
 }
 
