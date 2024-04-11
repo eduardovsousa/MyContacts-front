@@ -7,9 +7,9 @@ import Header from './components/Header';
 import InputSearch from './components/InputSearch';
 
 import Modal from '../../components/Modal';
-import ContactsList from './components/ContactsList';
 import EmptyList from './components/EmptyList';
 import Error from './components/Error';
+import ContactsList from './components/ListHeader';
 import SearchNotFound from './components/SearchNotFound';
 import useHome from './useHome';
 
